@@ -1,0 +1,2 @@
+# blog_for_thinkphp6
+用作毕业设计和个人博客基于thinkphp6的web应用
