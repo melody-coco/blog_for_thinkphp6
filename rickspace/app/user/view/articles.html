@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Left Sidebar - TXT by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{:url('/static/assets/css/main.css')->suffix(false)}" />
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+<!--			<img src="{:url('../static/qq.jpg')->suffix(false)}"/>-->
+
+			<!-- Header -->
+				<header id="header">
+					<div class="logo container">
+						<div>
+							<h1>幸</h1>
+							<p> 有 我 来 山 未 孤</p>
+						</div>
+					</div>
+				</header>
+
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+
+						<li class="current"><a href="{:url('articles')}">文章</a></li>
+						<li><a href="">留言</a></li>
+						<li><a href="">登录</a></li>
+					</ul>
+				</nav>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-3 col-12-medium">
+								<div class="sidebar">
+
+									<!-- Sidebar -->
+
+										<!-- Recent Posts -->
+											<section>
+												<h2 class="major"><span>Recent Posts</span></h2>
+												<ul class="divided">
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">A Subheading</a></h3>
+															<ul class="meta">
+																<li class="icon fa-clock">6 hours ago</li>
+																<li class="icon fa-comments"><a href="#">34</a></li>
+															</ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">Another Subheading</a></h3>
+															<ul class="meta">
+																<li class="icon fa-clock">9 hours ago</li>
+																<li class="icon fa-comments"><a href="#">27</a></li>
+															</ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">And Another</a></h3>
+															<ul class="meta">
+																<li class="icon fa-clock">Yesterday</li>
+																<li class="icon fa-comments"><a href="#">184</a></li>
+															</ul>
+														</article>
+													</li>
+												</ul>
+												<a href="#" class="button alt">Archives</a>
+											</section>
+
+										<!-- Something -->
+											<section>
+												<h2 class="major"><span>Ipsum Dolore</span></h2>
+												<a href="#" class="image featured"><img src="{:url('static/images/pic03.jpg')->suffix(false)}" alt="" /></a>
+												<p>
+													Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
+													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
+												</p>
+												<a href="#" class="button alt">Learn more</a>
+											</section>
+
+										<!-- Something -->
+											<section>
+												<h2 class="major"><span>Magna Feugiat</span></h2>
+												<p>
+													Rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
+													Donec sagittis massa et leo semper scele risque metus faucibus. Morbi congue mattis mi.
+													Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum sed commodo luctus blandit.
+												</p>
+												<a href="#" class="button alt">Learn more</a>
+											</section>
+
+								</div>
+							</div>
+							<div class="col-9 col-12-medium imp-medium">
+								<div class="content">
+
+									<!-- Content -->
+
+										<article class="box page-content">
+
+											<header>
+												<h2>文章</h2>
+												<p>以下是一些个人的博客文章</p>
+												<ul class="meta">
+													<li class="icon fa-clock">5 days ago</li>
+													<li class="icon fa-comments"><a href="#">1,024</a></li>
+												</ul>
+											</header>
+
+											<section>
+												<span class="image featured"><img src="{:url('static/images/pic05.jpg')->suffix(false)}" alt="" /></span>
+												<p>
+													本人是个菜鸡，下面是一些个人的文章，如有错误之处，还请指出来。我会好好的思考的
+												</p>
+											</section>
+
+
+												{volist name = 'data' id = 'list'}
+											<section style="height: 200px">
+												<h3>
+													<a href="{:url('index/article',['id'=>$list.id])}">{$list.title}</a>
+												</h3>
+												<p id="wode">
+													{$list.content}
+												</p>
+											</section>
+												{/volist}
+											{$data|raw}
+											<section>
+												<h3>So in conclusion ...</h3>
+												<p>
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
+													justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
+													ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
+													vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
+													Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
+													rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
+													Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
+													Phasellus sed nisl vitae.dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+												</p>
+												<p>
+													Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
+													fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
+													Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
+													Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.
+												</p>
+											</section>
+
+										</article>
+
+								</div>
+							</div>
+							<div class="col-12">
+
+								<!-- Features -->
+									<section class="box features">
+										<h2 class="major"><span>A Major Heading</span></h2>
+										<div>
+											<div class="row">
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="{:url('static/images/pic01.jpg')->suffix(false)}" alt="" /></a>
+															<h3><a href="#">A Subheading</a></h3>
+															<p>
+																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="{:url('static/images/pic02.jpg')->suffix(false)}" alt="" /></a>
+															<h3><a href="#">Another Subheading</a></h3>
+															<p>
+																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="{:url('static/images/pic03.jpg')->suffix(false)}" alt="" /></a>
+															<h3><a href="#">And Another</a></h3>
+															<p>
+																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="#" class="image featured"><img src="{:url('static/images/pic04.jpg')->suffix(false)}" alt="" /></a>
+															<h3><a href="#">And One More</a></h3>
+															<p>
+																Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+																lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+															</p>
+														</section>
+
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><a href="#" class="button large">查看文章</a></li>
+														<li><a href="#" class="button alt large">空</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12">
+
+								<!-- About -->
+
+
+							</div>
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section>
+										<h2 class="major"><span>Get in touch</span></h2>
+										<ul class="contact">
+											<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
+											<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+											<li><a class="icon brands fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+											<li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+											<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
+										</ul>
+									</section>
+
+							</div>
+						</div>
+
+						<!-- Copyright -->
+							<div id="copyright">
+								<ul class="menu">
+									<li>&copy;蜀ICP备20000189号-1</a></li>
+								</ul>
+							</div>
+
+					</div>
+				</footer>
+
+		</div>
+		<script>
+			tt = document.getElementById('wode').textContent;
+			if (tt.length > 400) {
+				//截取固定长度
+				var tt = tt.substring(0, 350);
+				document.getElementById('wode').innerText = tt+'……';
+			}
+		</script>
+
+		<!-- Scripts -->
+			<script src="{:url('/static/assets/js/jquery.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/jquery.dropotron.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/jquery.scrolly.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/browser.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/breakpoints.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/util.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/main.js')->suffix(false)}"></script>
+
+	</body>
+</html>

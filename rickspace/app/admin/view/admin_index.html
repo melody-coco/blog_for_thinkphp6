@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员主页</title>
+</head>
+<body>
+<!--停止使用-->
+<center>管理员主页</center>
+<form action="{:url('articlef/article_search')}">
+    搜索：<input type="text" name="search" ><br>
+    <input type="submit" value="搜索">
+
+</form>
+
+<table>
+    <tr>
+        <td>标题</td>
+        <td>创作者</td>
+        <td>删除</td>
+    </tr>
+    {volist name='data' id='list'}
+    <tr>
+        <td>
+            <a href="{:url('articlef/article_update',['id'=>$list.id])}">{$list.title}</a>
+
+        </td>
+        <td>
+            {$list.admin.name}
+        </td>
+        <td>
+            <a href="{:url('articlef/article_delete',['id'=>$list.id])}">删除</a>
+        </td>
+    </tr>
+    {/volist}
+</table>
+<a href="{:url('articlef/article_insert')}">新增文章</a>
+<a href="{:url('administrators/login_out')}">退出</a>
+</body>
+</html>

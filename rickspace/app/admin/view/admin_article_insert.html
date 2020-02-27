@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<!-- 导入编辑器样式文件 -->
+	<link rel="stylesheet" type="text/css" href="../../../editor-md/css/editormd.css"/>
+
+	<!-- 导入编辑器js文件 -->
+	<script src="../../jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../editor-md/editormd.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!-- 绑定节点 -->
+<div id="test-editormd"></div>
+
+<form action="{:url('Articlef/article_insert')}" method="post">
+	<input type="hidden" name="id" value="{$data.id}">
+	<input type="hidden" name="__token__" value="{:token()}">
+	<input type="button" onclick="getMd()"  id="md" value="获取编辑器内容" /><br>
+	<input type="hidden" name="content" id="mdd" value="空">
+	标题：<input type="text" name="title" value="{$data.title}">
+	<input type="submit" value="提交">
+</form>
+注意事项：1，更新时，编辑器的内容首尾部分要删去。2,一些解析的东西注意替换'<>'。什么的
+</body>
+<script type="text/javascript">
+	//创建编辑器对象 editormd() 携带两个参数,第一个为绑定id,第二个为配置
+
+	const blogEditor = editormd("test-editormd", {
+		placeholder: '请输入内容',
+		width: "100%",//编辑器高度
+		height: 540,//编辑器宽度
+		path: "editor-md/lib/",//这个路径为编辑器项目目录
+		emoji: true,//是否开启emoji表情
+		saveHTMLToTextarea: true,
+		tex             : true,  // 默认不解析
+		flowChart       : true,  // 默认不解析
+		sequenceDiagram : true,  // 默认不解析
+		markdown:"{$data}"
+	});
+	function getMd(){
+		var md = blogEditor.getMarkdown();//获取编辑器内容
+		document.getElementById('mdd').value = md;
+		alert(md)
+
+	}
+
+	// function post(URL, PARAMS) {
+	// 	var temp = document.createElement("form");
+	// 	temp.action = URL;
+	// 	temp.method = "post";
+	// 	temp.style.display = "none";
+	// 	for (var x in PARAMS) {
+	// 		var opt = document.createElement("textarea");
+	// 		opt.name = x;
+	// 		opt.value = PARAMS[x];
+	// 		// alert(opt.name)
+	// 		temp.appendChild(opt);
+	// 	}
+	// 	document.body.appendChild(temp);
+	// 	temp.submit();
+	// 	return temp;
+	// }
+</script>
+</html>

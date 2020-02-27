@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>401哦</p>
+<center>你访问的页面为401</center>
+此处和404.html为个人配置的401，404错误的显示模板。需要在config下的app.php中添加如下代码
+'http_exception_template' => [
+404 => \think\facade\App::getAppPath().'exception/404.html',   //在部署模式下才有用
+401 => \think\facade\App::getAppPath().'exception/401.html',   //自定义404，401错误模板
+]       //定义404错误的模板文件地址
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章修改</title>
+</head>
+<body>
+<!--停止使用-->
+<form action="{:url('Articlef/article_update')}" method="post">
+    <input type="hidden" name="__token__" value="{:token()}">
+    <input type="hidden" name="id" value="{$data.id}">
+    <input type="text" name="title" value="{$data.title}">
+    <input type="text" name="content" value="{$data.content}">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>TXT by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{:url('/static/assets/css/main.css')->suffix(false)}" />
+		<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+		<style>
+			.pagination{
+				/*background-color: red;*/
+				width: 250px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+<!--			<img src="{:url('../static/qq.jpg')->suffix(false)}" alt="">-->
+			<!-- Header -->
+				<header id="header">
+					<div class="logo container">
+						<div>
+							<h1>幸</h1>
+							<p> 有 我 来 山 未 孤</p>
+						</div>
+					</div>
+				</header>
+
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="current"><a href="index.html">Home</a></li>
+						<li>
+							<ul>
+								<li><a href="#">Lorem ipsum dolor</a></li>
+								<li><a href="#">Magna phasellus</a></li>
+								<li>
+									<a href="#">Phasellus consequat</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Phasellus consequat</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Veroeros feugiat</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<h2>welcome to melody'space</h2>
+						<p>
+							This is melody's personal technology sharing blog</p>
+						<a href="#main" class="button scrolly">简单后台管理系统</a>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row gtr-200">
+
+							<div class="col-12">
+
+								<!-- Features -->
+								<form action="{:url('Articlef/article_search')}">
+									搜索：<input type="text" name="search" ><br>
+									<input type="submit" value="搜索">
+
+								</form>
+									<section class="box features">
+										<h2 class="major"><span>文章</span></h2>
+
+										<div>
+
+											<div class="row">
+												{volist name = 'data' id = 'list'}
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="{:url('Articlef/article_update',['id'=>$list.id])}" class="image featured"><img src="../../static/images/pic01.jpg" alt="" /></a>
+															<h3><a href="#">{$list.title}</a></h3>
+															<p>
+																<p id="wode">
+																	{$list.content}
+															<a href="{:url('Articlef/article_delete',['id'=>$list.id])}">删除</a>
+																</p>
+															</p>
+														</section>
+
+												</div>
+												{/volist}<br>
+												<div style="float: right;width: 100px"><br>
+													<center>{$data|raw}</center><br>
+												</div>
+												<div class="col-12">
+													<a href="{:url('Administrators/login_out')}">退出</a>
+
+													<ul class="actions">
+<!--														<li><a href="{:url('Admin')}" class="button large">新增文章</a></li>-->
+														<li><a href="/admin" class="button large">新增文章</a></li>
+														<li><a href="#" class="button alt large">查看文章</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12">
+
+								<!-- About -->
+
+
+							</div>
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section>
+										<h2 class="major"><span>Get in touch</span></h2>
+
+									</section>
+
+							</div>
+						</div>
+
+						<!-- Copyright -->
+							<div id="copyright">
+
+							</div>
+
+					</div>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+		<script>
+			tt = document.getElementById('wode').textContent;
+			if (tt.length > 150) {
+				//截取固定长度
+				var tt = tt.substring(0,150);
+				document.getElementById('wode').innerText = tt+'……';
+			}
+		</script>
+			<script src="{:url('/static/assets/js/jquery.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/jquery.dropotron.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/jquery.scrolly.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/browser.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/breakpoints.min.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/util.js')->suffix(false)}"></script>
+			<script src="{:url('/static/assets/js/main.js')->suffix(false)}"></script>
+			<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+			<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	</body>
+</html>

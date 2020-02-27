@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登录</title>
+</head>
+<!--停止使用-->
+<body>
+<!--<form action="{:url('administrators/admin_login')}" method="post">-->
+<form action="administrators/admin_login" method="post">
+    管理员账号：<input type="text" name="user"><br>
+    管理员密码：<input type="password" name="password"><br>
+    <input type="submit" value="提交"><br>
+</form>
+</body>
+<script>
+
+
+    window.onload = function(){
+
+        var x = {$msg} ;
+        if(x == 1){
+            alert('你的帐号不存在');
+        }else if(x == 2){
+            alert('密码错误');
+        }else  if(x == 3){
+            alert("请登录");
+        }
+    };
+</script>
+</html>
